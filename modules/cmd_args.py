@@ -107,6 +107,10 @@ pkm.add_argument("--uv-symlink", action="store_true", help="Use the uv package m
 # backward compatibility
 parser = _parser.add_argument_group(description="backward compatibility (these do nothing)")
 parser.add_argument("--use-cpu", nargs="+", help="required by adetailer", default=[], type=str.lower)
+#添加三个无功能的空参数，避免导致直接死机
+parser.add_argument("--use-ipex", action="store_true", help="backward compatibility, does nothing", default=False)
+parser.add_argument("--vae-in-bf16", action="store_true", help="backward compatibility, does nothing", default=False)
+parser.add_argument("--no-download-sd-model", action="store_true", help="backward compatibility, does nothing", default=False)
 
 parser = _parser
 paths_internal.parser = parser
